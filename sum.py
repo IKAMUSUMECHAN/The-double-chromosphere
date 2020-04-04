@@ -1,4 +1,5 @@
 #此代码用来生成抽奖池
+
 import itertools
 #my_num = open('1.txt', mode = 'a',encoding='utf-8')
 

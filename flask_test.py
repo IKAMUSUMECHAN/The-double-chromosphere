@@ -1,3 +1,4 @@
+#coding=utf-8
 from flask import Flask, render_template, request, jsonify
 import Random_sampling
 import get_history_num
@@ -9,10 +10,11 @@ def index():
         return render_template('index.html')
     else:
         pass
-@app.route('/admin',methods=['GET','POST'])
+
+@app.route('/admin369369',methods=['GET','POST'])
 def admin():
     if request.method == 'GET':
-        return render_template('admin.html')
+        return render_template('admin369369.html')
     else:
         pass
 

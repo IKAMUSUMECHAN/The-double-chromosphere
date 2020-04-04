@@ -1,5 +1,7 @@
+#coding=utf-8
 # 源链接：https://blog.csdn.net/love_bb/article/details/81223432
 # 少许改动适应本项目需要
+import io
 import linecache
 import Random_sampling
 
@@ -61,7 +63,7 @@ def get_history_data():
         num = ssq_line[0]+ssq_line[1]+ssq_line[2]+ssq_line[3]+ssq_line[4]
         list_ssq_qh.append(int(num))
     before_num = max(list_ssq_qh) #取文件中最大的期号
-    file = open('ssq.txt', mode='w', encoding='utf-8')
+    file = io.open('ssq.txt', mode='w', encoding='utf-8')
     localtime = time.localtime(time.time())
     lyear = localtime.tm_year
     ymin = 20  # 开始年份

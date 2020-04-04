@@ -1,3 +1,4 @@
+#coding=utf-8
 import random
 import linecache
 
@@ -121,3 +122,4 @@ def clean_data ():
 
 if __name__ == "__main__":
     random_sampling()
+

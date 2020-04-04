@@ -1,9 +1,16 @@
-<!DOCTYPE html>
+<!DOCTYPE  html>
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="#" />
-    <meta charset="UTF-8">
-    <title>抽一组未开过的双色球号码</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+<!-- Loding font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
+<!-- Custom Styles -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 <script>
    function copyText(){
@@ -12,15 +19,39 @@
            res.res.forEach(element => {
             var li = document.createElement('li')
             li.append(element)
-            $("#temp").append('<a>'+element+'</a>'+'<br>')
+            $("#temp").append('<h2>'+element+'</h2>'+'<br>')
            });
-
        })
    }
 </script>
+<title>抽取一组从未开过的双色球号码</title>
 </head>
+
 <body>
- <button onclick="copyText()">抽一组未开过的双色球号码</button>
-    <ol id='temp'></ol>
+<!-- Backgrounds -->
+<div id="login-bg" class="container-fluid">
+  <div class="bg-img"></div>
+  <div class="bg-color"></div>
+</div>
+
+<!-- End Backgrounds -->
+
+<div class="container" id="login">
+	<div class="row justify-content-center">
+	<div class="col-lg-8">
+	  <div class="login">
+		<h2>抽取一组从未开过的双色球号码</h2>
+		<!-- Loging form -->
+
+			  <button onclick="copyText()" class="btn btn-lg btn-block btn-success">抽取</button>
+				<ol id='temp'></ol>
+
+		 <!-- End Loging form -->
+
+	  </div>Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+	</div>
+	</div>
+</div>
+
 </body>
 </html>

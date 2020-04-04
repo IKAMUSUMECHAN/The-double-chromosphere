@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="#" />
+    <meta charset="UTF-8">
+    <title>抽一组未开过的双色球号码</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+   function copyText(){
+       $.get('/clean_data','',function(res){
+           console.log(res)
+           res.res.forEach(element => {
+            var li = document.createElement('li')
+            li.append(element)
+            $("#temp").append('<a>'+element+'</a>'+'<br>')
+           });
+
+       })
+   }
+</script>
+</head>
+<body>
+<h3>清理一下已经开过的数据，每次开奖后点一下，因为数据很多响应会很慢，数据来自500彩票网</h3>
+ <button onclick="copyText()">数据清理</button>
+    <ol id='temp'></ol>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="#" />
+    <meta charset="UTF-8">
+    <title>抽一组未开过的双色球号码</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+   function copyText(){
+       $.get('/get_num','',function(res){
+           console.log(res)
+           res.res.forEach(element => {
+            var li = document.createElement('li')
+            li.append(element)
+            $("#temp").append('<a>'+element+'</a>'+'<br>')
+           });
+
+       })
+   }
+</script>
+</head>
+<body>
+ <button onclick="copyText()">抽一组未开过的双色球号码</button>
+    <ol id='temp'></ol>
+</body>
+</html>

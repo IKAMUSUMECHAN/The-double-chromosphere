@@ -1,11 +1,18 @@
 #coding=utf-8
 import random
 import linecache
+from memory_profiler import profile
+
 
 def random_sampling ():
     bull_ball = random.randint(1, 16) #抽蓝球
     bull_ball_path = 'data/' + str(bull_ball) + '.txt'  # 蓝球的文件路径
-    count = len(open(bull_ball_path, 'r').readlines())
+    # count = len(open(bull_ball_path, 'r').readlines())
+    file =open(bull_ball_path, 'r',buffering=1)
+    file_list = file.readlines()
+    count = len(file_list)
+    file.close()
+    file_list.clear()
     red_ball = random.randint(1, count) #抽红球
     red_ball_line = linecache.getline(bull_ball_path, red_ball)#抽取文件中的一行作为开奖
     list_num = change_to_list(red_ball_line)#开奖结果
@@ -14,6 +21,7 @@ def random_sampling ():
     if bull_ball>=10:
         list_num.append(str(bull_ball))
     print ('抽取结果是：',list_num)
+    linecache.clearcache()
     return list_num
 
 def change_to_list(red_ball_line):
@@ -84,6 +92,7 @@ def change_to_data(m):
     elif m == '33':n = 'W'
     return n
 
+
 def clean_data ():
     count = len(open('ssq.txt', 'r').readlines()) #打开历史开奖数据
     num = 0 #计数器
@@ -122,4 +131,5 @@ def clean_data ():
 
 if __name__ == "__main__":
     random_sampling()
+    clean_data()
 

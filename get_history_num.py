@@ -4,6 +4,7 @@
 import io
 import linecache
 import Random_sampling
+from memory_profiler import profile
 
 from requests import get
 from bs4 import BeautifulSoup
@@ -53,7 +54,6 @@ class ssqclazz:
         self.red_6 = tds[index].string
         index += 1
         self.blue_1 = tds[index].string
-
 
 def get_history_data():
     count = len(open('ssq.txt', 'r').readlines())

@@ -61,7 +61,8 @@ def get_history_data():
     for i in range(1,count+1):
         ssq_line = linecache.getline('ssq.txt', i)
         num = ssq_line[0]+ssq_line[1]+ssq_line[2]+ssq_line[3]+ssq_line[4]
-        list_ssq_qh.append(int(num))
+        num_int = int(num)
+        list_ssq_qh.append(num_int)
     before_num = max(list_ssq_qh) #取文件中最大的期号
     file = io.open('ssq.txt', mode='w', encoding='utf-8')
     localtime = time.localtime(time.time())

@@ -21,7 +21,7 @@ def random_sampling ():
     if bull_ball>=10:
         list_num.append(str(bull_ball))
     print ('抽取结果是：',list_num)
-    linecache.clearcache()
+    linecache.clearcache() #清除缓存
     return list_num
 
 def change_to_list(red_ball_line):
@@ -131,5 +131,3 @@ def clean_data ():
 
 if __name__ == "__main__":
     random_sampling()
-    clean_data()
-

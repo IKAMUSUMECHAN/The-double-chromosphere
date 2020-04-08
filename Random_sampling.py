@@ -99,10 +99,14 @@ def clean_data ():
     for i in range(1, count+1): #对文件每一行循环
         read_history_line = linecache.getline('ssq.txt', i) #抽取某一行
         red = [] #历史开奖号码
-        for j in range(6,24 ,3): #取出历史红球
-            m = read_history_line[j]+read_history_line[j+1] #红球
-            n =change_to_data(m) #转换格式
-            red.append(n) #组装
+        # for j in range(6,24 ,3): #取出历史红球
+        #     m = read_history_line[j]+read_history_line[j+1] #红球
+        #     n =change_to_data(m) #转换格式
+        #     red.append(n) #组装
+        for j in range(1 ,7):
+            m = read_history_line.split()
+            n = change_to_data(m[j])
+            red.append(n)
         str_bull = read_history_line[24]+read_history_line[25] #历史的蓝球
         bull_ball = int(str_bull) #去0操作
         bull_ball_path = 'data/'+str(bull_ball)+'.txt' #蓝球的文件路径

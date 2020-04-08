@@ -60,8 +60,10 @@ def get_history_data():
     list_ssq_qh = [] #期号
     for i in range(1,count+1):
         ssq_line = linecache.getline('ssq.txt', i)
-        num = ssq_line[0]+ssq_line[1]+ssq_line[2]+ssq_line[3]+ssq_line[4]
-        num_int = int(num)
+        # num = ssq_line[0]+ssq_line[1]+ssq_line[2]+ssq_line[3]+ssq_line[4]
+        num = ssq_line.split()
+        # print("切片后的num：",num)
+        num_int = int(num[0])
         list_ssq_qh.append(num_int)
     before_num = max(list_ssq_qh) #取文件中最大的期号
     file = io.open('ssq.txt', mode='w', encoding='utf-8')
